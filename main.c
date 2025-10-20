@@ -117,7 +117,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(white_pieces, target + (from_row % 2 ? 3 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     white_pieces = ClearBit(white_pieces, target);
@@ -127,7 +127,7 @@ int main () {
             } else if (strcmp(to, "R") == 0) {
                 int target = from_row % 2 ? position + 5 : position + 4;
                 // Error handling
-                if (position % 8 == 3) {
+                if (position % 8 == 7) {
                     wprintf(L"Invalid Move!\n");
                     continue;
                 }
@@ -141,9 +141,9 @@ int main () {
                     black_pieces = SetBit(black_pieces, target);
                 } else {
                     // Capture piece
-                    if (target % 8 == 3 || GetBit(white_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
+                    if (target % 8 == 7 || GetBit(white_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     white_pieces = ClearBit(white_pieces, target);
@@ -183,7 +183,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(black_pieces, target - (from_row % 2 ? 5 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     black_pieces = ClearBit(black_pieces, target);
@@ -209,7 +209,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 7 || GetBit(black_pieces, target - (from_row % 2 ? 4 : 3)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     black_pieces = ClearBit(black_pieces, target);
@@ -251,7 +251,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(white_pieces, target + (from_row % 2 ? 3 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     black_kings = ClearBit(black_kings, position);
@@ -263,7 +263,7 @@ int main () {
             } else if (strcmp(to, "R") == 0) {
                 int target = from_row % 2 ? position + 5 : position + 4;
                 // Error handling
-                if (position % 8 == 3) {
+                if (position % 8 == 7) {
                     wprintf(L"Invalid Move!\n");
                     continue;
                 }
@@ -279,9 +279,9 @@ int main () {
                     black_kings = SetBit(black_kings, target);
                 } else {
                     // Capture piece
-                    if (target % 8 == 3 || GetBit(white_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
+                    if (target % 8 == 7 || GetBit(white_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     black_kings = ClearBit(black_kings, position);
@@ -311,7 +311,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(white_pieces, target - (from_row % 2 ? 5 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     black_kings = ClearBit(black_kings, position);
@@ -341,7 +341,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 7 || GetBit(white_pieces, target - (from_row % 2 ? 4 : 3)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     black_pieces = ClearBit(black_pieces, position);
                     black_kings = ClearBit(black_kings, position);
@@ -377,7 +377,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(black_pieces, target - (from_row % 2 ? 5 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     white_kings = ClearBit(white_kings, position);
@@ -407,7 +407,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 7 || GetBit(black_pieces, target - (from_row % 2 ? 4 : 3)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     white_kings = ClearBit(white_kings, position);
@@ -437,7 +437,7 @@ int main () {
                     // Capture piece
                     if (target % 8 == 0 || GetBit(black_pieces, target + (from_row % 2 ? 3 : 4)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     white_kings = ClearBit(white_kings, position);
@@ -449,7 +449,7 @@ int main () {
             } else if (strcmp(to, "RB") == 0) {
                 int target = from_row % 2 ? position + 5 : position + 4;
                 // Error handling
-                if (position % 8 == 3) {
+                if (position % 8 == 7) {
                     wprintf(L"Invalid Move!\n");
                     continue;
                 }
@@ -465,9 +465,9 @@ int main () {
                     white_kings = SetBit(white_kings, target);
                 } else {
                     // Capture piece
-                    if (target % 8 == 3 || GetBit(black_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
+                    if (target % 8 == 7 || GetBit(black_pieces, target + (from_row % 2 ? 4 : 5)) == 1) {
                         wprintf (L"Invalid Move!\n");
-                        break;
+                        continue;
                     }
                     white_pieces = ClearBit(white_pieces, position);
                     white_kings = ClearBit(white_kings, position);
